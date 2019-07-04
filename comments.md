@@ -38,8 +38,8 @@ The content of a documentation comment is written in [Markdown](https://github.c
 Additionally, there are special fields that can be added to a documentation comment, which are prefixed by `@`.
 They allow you to define the properties of a function/object/variable.
 
-| Field       |  Description                                                                                                                 |  Syntax                           |
-|-------------|------------------------------------------------------------------------------------------------------------------------------|-----------------------------------|
+| Field         |  Description                                                                                                               |  Syntax                             |
+|---------------|----------------------------------------------------------------------------------------------------------------------------|-------------------------------------|
 | `@deprecated` | Indicates that this API should no longer be used.                                                                          | `@deprecated`                       |
 | `@param`      | Appends a parameter with the specified `parameter-name` followed its `description` to the "Parameters" section of the API. | `@param parameter-name description` |
 | `@return`     | Used to describe the value returned by an function.                                                                        | `@return description`               |
@@ -59,4 +59,21 @@ Here is an example of such a documentation comment:
 ```
 
 ## Licence comments
+
+Licence comments are like multiline comments, except that they start with the `/*?` statement.
+They are only written at the beginning of a file, they are also exported in header files by the compiler.
+The licence comment allows you to write the licence under which your file is licenced.
+
+Here is a quick example with a MIT licence:
+
+```lapis
+/*?
+ * Copyright © year author
+ *
+ * This file is part of project-name.
+ *
+ * Licensed under the MIT license. For more information,
+ * see the LICENSE file.
+ */
+```
 
