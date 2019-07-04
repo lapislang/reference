@@ -2,7 +2,7 @@
 
 ## Single line comments
 
-Single line comments can be placed anywhere in the code; they are prefixed by `//`; anything after the `//` will be considered as part of the comment.
+Single line comments can be placed anywhere in the code; they are prefixed by `//`. Anything after `//` will be considered as part of the comment.
 
 Example:
 
@@ -22,22 +22,21 @@ This is what such comments may look like:
  * This is a multi line comment!
  */
 
-/* Multiline comments can also be used inline, which enables you to write code after it */
+/* Multiline comments can also be used inline, which allows you to write code after it */
 ```
 
-The asterisks `*` at the beginning of each line are not mandatory, but are recommended for readability.
+The asterisk `*` at the beginning of each line is not mandatory, but is recommended for readability.
 
 ## Documentation comments
 
 Documentation comments are just like multiline comments, except that they start with the `/*!` statement.
 They are only written outside of function bodies and are bound to a function, a variable declaration, etc.
-
-They are exported in the header files, and can be used to generate easily readable documentation.
+They may be exported in header files by the compiler and can be used to generate easily readable documentation.
 
 The content of a documentation comment is written in [Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet).
 
 Additionally, there are special fields that can be added to a documentation comment, which are prefixed by `@`.
-It allows you to define the properties of a function/object/variable.
+They allow you to define the properties of a function/object/variable.
 
 | Field       |  Description                                                                                                                 |  Syntax                           |
 |-------------|------------------------------------------------------------------------------------------------------------------------------|-----------------------------------|
