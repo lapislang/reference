@@ -1,8 +1,8 @@
 # Comments
 
-## Single line comment
+## Single line comments
 
-Single line comments can be place anywhere in the code, everything after the `//` prefix will be considered as comment.
+Single line comments can be placed anywhere in the code; they are prefixed by `//`; anything after the `//` will be considered as part of the comment.
 
 Example:
 
@@ -10,54 +10,54 @@ Example:
 // This is a single line comment.
 ```
 
-## Multi line comment
+## Multiline comments
 
-Multi line comments have begin and end statements: `/*` and `*/`.
-Everything inside the statements will be considered as comment.
+Multiline comments begin and end with the following statements: `/*` and `*/`.
+Everything inside these two statements will be considered as comment.
 
-Example:
+This is what such comments may look like:
 
 ```lapis
 /* 
  * This is a multi line comment!
  */
 
-/* But also can be used inline so we can write code after the comment on the same line. */
+/* Multiline comments can also be used inline, which enables you to write code after it */
 ```
 
-## Documentation comment
+The asterisks `*` at the beginning of each line are not mandatory, but are recommended for readability.
 
-Documentation comments are very similar with multi line comments: they have a begin and end statements.
-The difference is the begin statements which is `/*!`.
+## Documentation comments
 
-Documentation comments cannot be inside function scopes, they are only available before every statement outside a function.
-They are also assigned to a statement like a function declaration, a variable declaration, etc...
+Documentation comments are just like multiline comments, except that they start with the `/*!` statement.
+They are only written outside of function bodies and are bound to a function, a variable declaration, etc.
 
-They are exported in the header files, and can be used to generate human readable documentation.
+They are exported in the header files, and can be used to generate easily readable documentation.
 
-To format the content of a documentation comment, Markdown should be used.
+The content of a documentation comment is written in [Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet).
 
-There is special fields which their prefix is `@`. It allows to define properties.
+Additionally, there are special fields that can be added to a documentation comment, which are prefixed by `@`.
+It allows you to define the properties of a function/object/variable.
 
-| Field       |  Description                                                                                                           |  Syntax                           |
-|-------------|------------------------------------------------------------------------------------------------------------------------|-----------------------------------|
-| @deprecated | Indicates that this API should no longer be used.                                                                      | @deprecated                       |
-| @param      | Adds a parameter with the specified parameter-name followed by the specified description to the "Parameters" section." | @param parameter-name description |
-| @return     | Defines the description of the value returned by the API.                                                              | @return description               |
-| @see        | Adds a "See also" heading with a link or text entry that points to reference.                                          | @see reference                    |
-| @since      | Defines since which version the function/variable/etc is available.                                                    | @since release                    |
-| @version    | Defines the current version of the API.                                                                                | @version release                  |
+| Field       |  Description                                                                                                                 |  Syntax                           |
+|-------------|------------------------------------------------------------------------------------------------------------------------------|-----------------------------------|
+| `@deprecated` | Indicates that this API should no longer be used.                                                                          | `@deprecated`                       |
+| `@param`      | Appends a parameter with the specified `parameter-name` followed its `description` to the "Parameters" section of the API. | `@param parameter-name description` |
+| `@return`     | Used to describe the value returned by an function.                                                                        | `@return description`               |
+| `@see`        | Adds a "See also" heading with a link or text entry pointing to `reference`.                                               | `@see reference`                    |
+| `@since`      | Defines since which version a function/variable/etc is available.                                                          | `@since release`                    |
+| `@version`    | Defines the current version of an API.                                                                                     | `@version release`                  |
 
-Example:
+Here is an example of such a documentation comment:
 
 ```lapis
 /*!
- * API description.
+ * My wonderful API, written in Lapis!
  *
  * @version 1.2.0
  * @since 1.0.0
  */
 ```
 
-## Licence comment
+## Licence comments
 
