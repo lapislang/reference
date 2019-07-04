@@ -58,13 +58,13 @@ Here is an example of such a documentation comment:
  */
 ```
 
-## Licence comments
+## License comments
 
-Licence comments are like multiline comments, except that they start with the `/*?` statement.
+License comments are like multiline comments, except that they start with the `/*?` statement.
 They are only written at the beginning of a file, they are also exported in header files by the compiler.
-The licence comment allows you to write the licence under which your file is licenced.
+The license comment allows you to write the license under which your file is licensed.
 
-Here is a quick example with a MIT licence:
+Here is a quick example with a MIT license:
 
 ```lapis
 /*?
