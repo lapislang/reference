@@ -29,10 +29,10 @@ Remark: 128 bits integers may not be available on every platform or on the first
 
 ### Floating types
 
-|  Type    | Size    |
-|----------|---------|
-| `float`  | 32-bits |
-| `double` | 64-bits |
+|  Type  |  Size   |
+|--------|---------|
+| `f32`  | 32-bits |
+| `f64`  | 64-bits |
 
 ## Type definition
 
