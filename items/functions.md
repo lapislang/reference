@@ -1,17 +1,17 @@
 # Functions
 
-```
+<div style="background-color: rgba(255, 255, 255, 0.15);">
 Syntax:
 
-Function:
-  `fn` FunctionReturnType IDENTIFIER Generics `(` FunctionParameters `)` FunctionQualifiers BlockExpression
+Function: <br />
+ &nbsp;&nbsp; `fn` FunctionReturnType IDENTIFIER Generics `(` FunctionParameters `)` FunctionQualifiers [BlockExpression](../statements_and_expressions/expressions/block_expression.md)
 
-FunctionReturnType:
-  Type
+FunctionReturnType: <br />
+ &nbsp;&nbsp; [Type](../types.md)
 
-FunctionParam:
-  FunctionParam
-```
+FunctionParam: <br />
+ &nbsp;&nbsp; FunctionParam
+</div>
 
 A *function* consists of a block, along with a name and a set of parameters.
 
