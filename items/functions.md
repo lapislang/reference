@@ -76,10 +76,24 @@ fn i32 answer_to_life_the_universe_and_everything() constexpr {
 
 ## Inline functions
 
-Inline functions are qualified with the `inline` keyword. *Inline functions* don't exist on runtime.
-At compile time, called *inline functions* will be replaced by the content of the block expression.
+Inline functions are qualified with the `inline` keyword. *Inline functions* are a feature to reduce the execution time of a program.
+At compile time, the call statement of *inline functions* will be replaced by the function's block expression.
+It allows better execution time because it doesn't have to jump to another location to execute the function.
 
-For instance:
+*Inline functions* may be ignored if the code inside the function is too long.
+
+### Pros
+
+- It speeds up the execution time.
+- It avoids to pollute namespaces like macros do.
+
+### Cons
+
+- It increases the executable size due to code expansion.
+- *Inline functions* are resolved at compile time. Which means if you change the code of inlined function, you will need to recompile the code using it to make sure it will be updated.
+- Sometimes not useful for example in embedded systems where large executable size is not prefered at all due to memory constraints. 
+
+### Example
 
 ```lapis
 fn i32 add(i32 a, i32 b) inline {
@@ -98,4 +112,3 @@ fn i32 call_add() {
     return 2 + 2;
 }
 ```
-
