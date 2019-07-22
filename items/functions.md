@@ -56,7 +56,7 @@ They are the only methods of a class that can be called when its class instance 
 For instance:
 
 ```lapis
-const fn f64 get_length() {
+fn f64 get_length() const {
     return math::sqrt(this.x * this.x, this.y * this.y);
 }
 ```
@@ -65,4 +65,37 @@ const fn f64 get_length() {
 
 Functions qualified with the `constexpr` keyword are const expr functions. *Const expr functions* can be called from within const contexts.
 When called from a const context, the function is interpreted by the compiler at compile time. The interpretation happens in the environment of the compilation target and not the host.
+
+For instance:
+
+```lapis
+fn i32 answer_to_life_the_universe_and_everything() constexpr {
+    return 42;
+}
+```
+
+## Inline functions
+
+Inline functions are qualified with the `inline` keyword. *Inline functions* don't exist on runtime.
+At compile time, called *inline functions* will be replaced by the content of the block expression.
+
+For instance:
+
+```lapis
+fn i32 add(i32 a, i32 b) inline {
+    return a + b;
+}
+
+fn i32 call_add() {
+    return add(2, 2);
+}
+```
+
+will become in runtime:
+
+```lapis
+fn i32 call_add() {
+    return 2 + 2;
+}
+```
 
