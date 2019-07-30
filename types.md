@@ -1,6 +1,8 @@
 # Types
 
-## Default types
+From [Wikipedia](https://en.wikipedia.org/wiki/Data_type): `In computer science and computer programming, a data type or simply type is an attribute of data which tells the compiler or interpreter how the programmer intends to use the data.`
+
+## Fundamental types
 
 ### Void type
 
@@ -34,6 +36,29 @@ Remark: 128 bits integers may not be available on every platform or on the first
 | `f32`  | 32-bits |
 | `f64`  | 64-bits |
 
+## Additional basic types
+
+### `usize`
+
+The pointer-sized unsigned integer type.
+
+The size of this primitive is how many bytes it takes to reference any location in memory. Its size will depend of the target.
+
+## Complex types
+
+Complex types, or tuples, represent a set of values.
+
+A *complex type* is defined by types seperated by commas encapsulated by parentheses.
+
+A quick example of a type holding an `i8` and an `usize`:
+```lapis
+(i8, usize)
+```
+
+## Type unions
+
+(TODO)
+
 ## Type definition
 
 Types can be user-defined with the `type` keyword.
@@ -44,5 +69,6 @@ Here's a quick example with primitive types:
 ```lapis
 type char = u8;
 type char32 = u32;
+type vec2 = (i32, i32);
 ```
 
