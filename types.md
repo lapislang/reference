@@ -48,16 +48,26 @@ The size of this primitive is how many bytes it takes to reference any location 
 
 Complex types, or tuples, represent a set of values.
 
-A *complex type* is defined by types seperated by commas encapsulated by parentheses.
+A *complex type* is defined by types seperated by commas encapsulated by parentheses. (wip)
 
 A quick example of a type holding an `i8` and an `usize`:
 ```lapis
 (i8, usize)
 ```
 
-## Type unions
+## Union types
 
-(TODO)
+A value whose type is an union type may be of any of the types that the *union type* holds.
+
+A *union type* is defined by types seperated by vertical lines. (wip)
+
+A quick exemple of an optional value represented with an *union type*:
+
+```lapis
+i8 | void
+```
+
+The value can be either an `i8` value or a `void` value here.
 
 ## Type definition
 
@@ -69,6 +79,7 @@ Here's a quick example with primitive types:
 ```lapis
 type char = u8;
 type char32 = u32;
-type vec2 = (i32, i32);
+type vec2 = (i32, i32); // wip
+type optional_vec2 = vec2 | void; // wip
 ```
 
