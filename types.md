@@ -86,15 +86,11 @@ The value can be either an `i8` value or a `void` value here.
 
 ## Type casting
 
-Explicit type conversion (casting) can be performed using the `cast`|`as`? keyword.
-
-[The `cast` keyword can be seen as a *[generic function](items/functions.md#generic-functions)*, the *generics* is the type to cast to and the argument is the value to cast.] WIP could use `as` keyword instead?
+Explicit type conversion (casting) can be performed using the `as` keyword.
 
 Here's a quick exemple where an `i32` is cast to `i64`:
 
 ```lapis
-cast<i64>(5)
-// or?
 5 as i64
 ```
 
@@ -102,8 +98,6 @@ Casting complex types is possible, it will cast the inner values to the new type
 
 ```lapis
 // The first value is not casted by the complex type cast because its type is already i8, and the second value is casted to usize.
-cast<(i8, usize)>({cast<i8>(5), 6})
-// or?
 {5 as i8, 6} as (i8, usize)
 ```
 
