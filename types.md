@@ -2,7 +2,7 @@
 
 From [Wikipedia](https://en.wikipedia.org/wiki/Data_type): `In computer science and computer programming, a data type or simply type is an attribute of data which tells the compiler or interpreter how the programmer intends to use the data.`
 
-Summary:
+## Summary
 
  1. [Fundamental types](#fundamental-types)
      1. [Void type](#void-type)
@@ -100,6 +100,8 @@ Casting complex types is possible, it will cast the inner values to the new type
 // The first value is not casted by the complex type cast because its type is already i8, and the second value is casted to usize.
 {5 as i8, 6} as (i8, usize)
 ```
+
+See also: [Operator expression#Type cast expression](statements_and_expressions/expressions/operator_expressions.md#type-cast-expression)
 
 ## Type checking
 

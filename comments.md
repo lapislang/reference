@@ -1,5 +1,14 @@
 # Comments
 
+All programmers should want to make their code easy to understand, but sometimes extra explanation is warranted. In these cases, programmers leave notes, or *comments*, in their code source. It can also be used for documentation generation or licensing. The compiler will ignore basic comments, but people reading the source code may find them useful.
+
+## Summary
+
+ 1. [Single line comments](#single-line-comments)
+ 2. [Multiline comments](#multiline-comments)
+ 3. [Documentation comments](#documentation-comments)
+ 4. [License comments](#license-comments)
+
 ## Single line comments
 
 Single line comments can be placed anywhere in the code; they are prefixed by `//`. Anything after `//` will be considered as part of the comment.
@@ -33,6 +42,8 @@ Documentation comments are just like multiline comments, except that they start 
 They are only written outside of function bodies and are bound to a function, a variable declaration, etc.
 They may be exported in header files by the compiler and can be used to generate easily readable documentation.
 
+If misplaced, the compiler will warn the programmer and ignore them.
+
 The content of a documentation comment is written in [Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet).
 
 Additionally, there are special fields that can be added to a documentation comment, which are prefixed by `@`.
@@ -63,6 +74,8 @@ Here is an example of such a documentation comment:
 License comments are like multiline comments, except that they start with the `/*?` statement.
 They are only written at the beginning of a file, they are also exported in header files by the compiler.
 The license comment allows you to write the license under which your file is licensed.
+
+If misplaced, the compiler will warn the prorammer if the warning option `misplaced_license_comments` is enabled.
 
 Here is a quick example with a MIT license:
 

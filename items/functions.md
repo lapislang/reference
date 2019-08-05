@@ -1,16 +1,16 @@
 # Functions
 
 <div style="background-color: rgba(255, 255, 255, 0.15);">
-Syntax:
+<strong>Syntax</strong>
 
-Function: <br />
- &nbsp;&nbsp; `fn` FunctionReturnType IDENTIFIER Generics `(` FunctionParameters `)` FunctionQualifiers [BlockExpression](../statements_and_expressions/expressions/block_expression.md)
+*Function*: <br />
+ &nbsp;&nbsp; `fn` *FunctionReturnType* IDENTIFIER *Generics* `(` *FunctionParameters* `)` *FunctionQualifiers* [*BlockExpression*](../statements_and_expressions/expressions/block_expression.md)
 
-FunctionReturnType: <br />
- &nbsp;&nbsp; [Type](../types.md)
+*FunctionReturnType*: <br />
+ &nbsp;&nbsp; [*Type*](../types.md)
 
-FunctionParam: <br />
- &nbsp;&nbsp; FunctionParam
+*FunctionParameters*: <br />
+ &nbsp;&nbsp; *FunctionParam*
 </div>
 
 A *function* consists of a block, along with a name and a set of parameters.
@@ -41,6 +41,14 @@ fn hello() {
     // Empty function.
 }
 ```
+
+## Summary
+
+ 1. [Functions & syntax](#functions)
+ 2. [Generic functions](#generic-functions)
+ 3. [Const functions](#const-functions)
+ 4. [Constexpr functions](#constexpr-functions)
+ 5. [Inline functions](#inline-functions)
 
 ## Generic functions
 
