@@ -60,6 +60,7 @@ Const functions, or const methods, are methods of classes that cannot change the
 They are defined with the `const` keyword preceding the classical function syntax.
 
 They are the only methods of a class that can be called when its class instance is qualified as `const`.
+They can only call const methods on member objects.
 
 For instance:
 
@@ -97,11 +98,10 @@ It allows better execution time because it doesn't have to jump to another locat
 
 ### Cons
 
-- It increases the executable size due to code expansion.
-- *Inline functions* are resolved at compile time. Which means if you change the code of inlined function, you will need to recompile the code using it to make sure it will be updated.
-- Sometimes not useful for example in embedded systems where large executable size is not prefered at all due to memory constraints. 
+- It increases the executable size due to code expansion, making it not useful in situations where there is few available memory
+- *Inline functions* are resolved at compile time. Which means if you change the code of inlined function, you will need to recompile every part of the code using it to make sure it will be updated.
 
-### Example
+### Examples
 
 ```lapis
 fn i32 add(i32 a, i32 b) inline {
@@ -113,7 +113,7 @@ fn i32 call_add() {
 }
 ```
 
-will become in runtime:
+Will be the same as the following code during runtime:
 
 ```lapis
 fn i32 call_add() {
