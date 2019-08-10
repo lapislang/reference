@@ -4,7 +4,7 @@
 <strong>Syntax</strong>
 
 *OperatorExpression*: <br />
- &nbsp;&nbsp; [*NegationExpression*](#negation-expression) <br />
+ &nbsp;&nbsp; [*NegationExpression*](#negation-operators) <br />
  &nbsp;&nbsp; | [*ComparisonExpression*](#comparison-operators) <br />
  &nbsp;&nbsp; | [*TypeCastExpression*](#type-cast-expression)
 </div>
@@ -13,20 +13,32 @@ Operators are defined for built in types by the Lapis language.
 Many of the following operators can also be overloaded (WIP).
 
 ## Summary
- 1. [Negation expression](#negation-expression)
+ 1. [Negation operators](#negation-operators)
  2. [Comparison operators](#comparison-operators)
- 3. [Type cast expression](#type-cast-expression)
+ 3. [Logical operators](#logical-operators)
+ 4. [Type cast expression](#type-cast-expression)
 
-## Negation expression
+## Negation operators
 
 <div style="background-color: rgba(255, 255, 255, 0.15);">
 <strong>Syntax</strong>
 
 *NegationExpression*: <br />
+ &nbsp;&nbsp; `-` *Expression* <br />
  &nbsp;&nbsp; `!` *Expression*
 </div>
 
-WIP
+Negation operators are two unary operators. 
+This table summarizes the behavior of them on primitive types.
+
+They are not overloadable.
+
+|  Symbol  |  Integer    |  Boolean    |  Floating point  |
+|----------|-------------|-------------|------------------|
+|   `-`    | Negation*   |             | Negation         |
+|   `!`    | Bitwise NOT | Logical NOT |                  |
+
+\* Only for signed integer types.
 
 ## Comparison operators
 
@@ -39,10 +51,13 @@ WIP
  &nbsp;&nbsp; | *Expression* `>` *Expression* <br />
  &nbsp;&nbsp; | *Expression* `<` *Expression* <br />
  &nbsp;&nbsp; | *Expression* `>=` *Expression* <br />
- &nbsp;&nbsp; | *Expression* `<=` *Expression*
+ &nbsp;&nbsp; | *Expression* `<=` *Expression* <br />
+ &nbsp;&nbsp; | *Expression* `<=>` *Expression* <br />
 </div>
 
 WIP
+
+## Logical operators
 
 ## Type cast expression
 
