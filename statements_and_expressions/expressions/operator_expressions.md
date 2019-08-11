@@ -3,11 +3,13 @@
 <div style="background-color: rgba(255, 255, 255, 0.15);">
 <strong>Syntax</strong>
 
-*OperatorExpression*: <br />
- &nbsp;&nbsp; [*NegationExpression*](#negation-operators) <br />
- &nbsp;&nbsp; | [*ComparisonExpression*](#comparison-operators) <br />
- &nbsp;&nbsp; | [*LogicalExpression*](#logical-operators) <br />
- &nbsp;&nbsp; | [*TypeCastExpression*](#type-cast-expression)
+*OperatorExpression*: <br/>
+ &nbsp;&nbsp; [*NegationExpression*](#negation-operators) <br/>
+ &nbsp;&nbsp; | [*ComparisonExpression*](#comparison-operators) <br/>
+ &nbsp;&nbsp; | [*LogicalExpression*](#logical-operators) <br/>
+ &nbsp;&nbsp; | [*TypeCastExpression*](#type-cast-expression) <br/>
+ &nbsp;&nbsp; | [*AssignmentExpression*](#assignment-expression) <br/>
+ &nbsp;&nbsp; | [*CompoundAssignmentExpression*](#compound-assignment-expressions)
 </div>
 
 Operators are defined for built in types by the Lapis language.
@@ -18,14 +20,16 @@ Many of the following operators can also be overloaded (WIP).
  2. [Comparison operators](#comparison-operators)
  3. [Logical operators](#logical-operators)
  4. [Type cast expression](#type-cast-expression)
+ 5. [Assignment expression](#assignment-expression)
+ 6. [Compound assignment expressions](#compound-assignment-expressions)
 
 ## Negation operators
 
 <div style="background-color: rgba(255, 255, 255, 0.15);">
 <strong>Syntax</strong>
 
-*NegationExpression*: <br />
- &nbsp;&nbsp; `-` *Expression* <br />
+*NegationExpression*: <br/>
+ &nbsp;&nbsp; `-` *Expression* <br/>
  &nbsp;&nbsp; `!` *Expression*
 </div>
 
@@ -46,14 +50,14 @@ They are not overloadable.
 <div style="background-color: rgba(255, 255, 255, 0.15);">
 <strong>Syntax</strong>
 
-*ComparisonExpression*: <br />
- &nbsp;&nbsp; *Expression* `==` *Expression* <br />
- &nbsp;&nbsp; | *Expression* `!=` *Expression* <br />
- &nbsp;&nbsp; | *Expression* `>` *Expression* <br />
- &nbsp;&nbsp; | *Expression* `<` *Expression* <br />
- &nbsp;&nbsp; | *Expression* `>=` *Expression* <br />
- &nbsp;&nbsp; | *Expression* `<=` *Expression* <br />
- &nbsp;&nbsp; | *Expression* `<=>` *Expression* <br />
+*ComparisonExpression*: <br/>
+ &nbsp;&nbsp; *Expression* `==` *Expression* <br/>
+ &nbsp;&nbsp; | *Expression* `!=` *Expression* <br/>
+ &nbsp;&nbsp; | *Expression* `>` *Expression* <br/>
+ &nbsp;&nbsp; | *Expression* `<` *Expression* <br/>
+ &nbsp;&nbsp; | *Expression* `>=` *Expression* <br/>
+ &nbsp;&nbsp; | *Expression* `<=` *Expression* <br/>
+ &nbsp;&nbsp; | *Expression* `<=>` *Expression* <br/>
 </div>
 
 Comparison operators compare two operands and return a boolean value, except for the `<=>` operator which return an `i8` value.
@@ -65,8 +69,8 @@ WIP
 <div style="background-color: rgba(255, 255, 255, 0.15);">
 <strong>Syntax</strong>
 
-*LogicalExpression*: <br />
- &nbsp;&nbsp; *Expression* `||` *Expression* <br />
+*LogicalExpression*: <br/>
+ &nbsp;&nbsp; *Expression* `||` *Expression* <br/>
  &nbsp;&nbsp; | *Expression* `&&` *Expression*
 </div>
 
@@ -91,7 +95,7 @@ let z = (2 == 2) && true; // true
 <div style="background-color: rgba(255, 255, 255, 0.15);">
 <strong>Syntax</strong>
 
-*TypeCastExpression*: <br />
+*TypeCastExpression*: <br/>
  &nbsp;&nbsp; *Expression* `as` [*Type*](../../types.md)
 </div>
 
@@ -105,3 +109,29 @@ An example of an `as` expression:
 ```
 
 See: [Type#Type casting](../../types.md#type-casting) for further information.
+
+## Assignment expression
+
+<div style="background-color: rgba(255, 255, 255, 0.15);">
+<strong>Syntax</strong>
+
+*AssignmentExpression*: <br/>
+ &nbsp;&nbsp; *Expression* `=` *Expression*
+</div>
+
+## Compound assignment expressions
+
+<div style="background-color: rgba(255, 255, 255, 0.15);">
+<strong>Syntax</strong>
+
+*CompoundAssignmentExpression*: <br/>
+ &nbsp;&nbsp; *Expression* `+=` *Expression* <br/>
+ &nbsp;&nbsp; | *Expression* `-=` *Expression* <br/>
+ &nbsp;&nbsp; | *Expression* `*=` *Expression* <br/>
+ &nbsp;&nbsp; | *Expression* `/=` *Expression* <br/>
+ &nbsp;&nbsp; | *Expression* `>>=` *Expression* <br/>
+ &nbsp;&nbsp; | *Expression* `<<=` *Expression* <br/>
+ &nbsp;&nbsp; | *Expression* `|=` *Expression* <br/>
+ &nbsp;&nbsp; | *Expression* `&=` *Expression* <br/>
+ &nbsp;&nbsp; | *Expression* `^=` *Expression* <br/>
+</div>
