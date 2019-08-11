@@ -29,7 +29,7 @@ Many of the following operators can also be overloaded (WIP).
  &nbsp;&nbsp; `!` *Expression*
 </div>
 
-Negation operators are two unary operators. 
+Negation operators are two unary operators.
 This table summarizes the behavior of them on primitive types.
 
 They are not overloadable.
