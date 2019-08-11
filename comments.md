@@ -89,4 +89,3 @@ Here is a quick example with a MIT license:
  * see the LICENSE file.
  */
 ```
-
