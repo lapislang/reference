@@ -79,10 +79,10 @@ A *union type* is defined by types seperated by vertical lines encapsulated by p
 A quick exemple of an optional value represented with an *union type*:
 
 ```lapis
-let (i8 | void) x = may_be_void();
+(i8 | void)
 ```
 
-Here, `x` can be either an `i8` value or a `void` value here.
+The value can be either an `i8` value or a `void` value here.
 
 ## Type casting
 

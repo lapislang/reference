@@ -5,6 +5,7 @@
 
 *OperatorExpression*: <br/>
  &nbsp;&nbsp; [*NegationExpression*](#negation-operators) <br/>
+ &nbsp;&nbsp; | [*ArithmeticOrLogicalExpression*](#arithmetic-and-logical-binary-operators) <br/>
  &nbsp;&nbsp; | [*ComparisonExpression*](#comparison-operators) <br/>
  &nbsp;&nbsp; | [*LogicalExpression*](#logical-operators) <br/>
  &nbsp;&nbsp; | [*TypeCastExpression*](#type-cast-expression) <br/>
@@ -16,12 +17,14 @@ Operators are defined for built in types by the Lapis language.
 Many of the following operators can also be overloaded (WIP).
 
 ## Summary
+
  1. [Negation operators](#negation-operators)
- 2. [Comparison operators](#comparison-operators)
- 3. [Logical operators](#logical-operators)
- 4. [Type cast expression](#type-cast-expression)
- 5. [Assignment expression](#assignment-expression)
- 6. [Compound assignment expressions](#compound-assignment-expressions)
+ 2. [Arithmetic and logical binary operators](#arithmetic-and-logical-binary-operators)
+ 3. [Comparison operators](#comparison-operators)
+ 4. [Logical operators](#logical-operators)
+ 5. [Type cast expression](#type-cast-expression)
+ 6. [Assignment expression](#assignment-expression)
+ 7. [Compound assignment expressions](#compound-assignment-expressions)
 
 ## Negation operators
 
@@ -30,7 +33,7 @@ Many of the following operators can also be overloaded (WIP).
 
 *NegationExpression*: <br/>
  &nbsp;&nbsp; `-` *Expression* <br/>
- &nbsp;&nbsp; `!` *Expression*
+ &nbsp;&nbsp; | `!` *Expression*
 </div>
 
 Negation operators are two unary operators.
@@ -44,6 +47,37 @@ They are not overloadable.
 |   `!`    | Bitwise NOT | Logical NOT |                  |
 
 \* Only for signed integer types.
+
+## Arithmetic and logical binary operators
+
+<div style="background-color: rgba(255, 255, 255, 0.15);">
+<strong>Syntax</strong>
+
+*ArithmeticOrLogicalExpression*: <br/>
+ &nbsp;&nbsp; *Expression* `+` *Expression* <br/>
+ &nbsp;&nbsp; | *Expression* `-` *Expression* <br/>
+ &nbsp;&nbsp; | *Expression* `*` *Expression* <br/>
+ &nbsp;&nbsp; | *Expression* `/` *Expression* <br/>
+ &nbsp;&nbsp; | *Expression* `<<` *Expression* <br/>
+ &nbsp;&nbsp; | *Expression* `>>` *Expression* <br/>
+ &nbsp;&nbsp; | *Expression* `|` *Expression* <br/>
+ &nbsp;&nbsp; | *Expression* `&` *Expression* <br/>
+ &nbsp;&nbsp; | *Expression* `^` *Expression* <br/>
+</div>
+
+WIP
+
+|  Operator  |  Integer         |  Boolean    |  Floating point  |
+|------------|------------------|-------------|------------------|
+| `+`        | Addition         | Logical OR  | Addition         |
+| `-`        | Subtraction      |             | Subtraction      |
+| `*`        | Multiplication   | Logical AND | Multiplication   |
+| `/`        | Division         |             | Division         |
+| `<<`       | Left shift       |             |                  |
+| `>>`       | Right shift      |             |                  |
+| `|`        | Bitwise OR       | Logical OR  |                  |
+| `&`        | Bitwise AND      | Logical AND |                  |
+| `^`        | Bitwise XOR      | Logical XOR |                  |
 
 ## Comparison operators
 
