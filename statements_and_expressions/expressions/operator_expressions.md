@@ -3,31 +3,33 @@
 <div style="background-color: rgba(255, 255, 255, 0.15);">
 <strong>Syntax</strong>
 
-*OperatorExpression*: <br />
- &nbsp;&nbsp; [*NegationExpression*](#negation-operators) <br />
- &nbsp;&nbsp; | [*ComparisonExpression*](#comparison-operators) <br />
- &nbsp;&nbsp; | [*LogicalExpression*](#logical-operators) <br />
- &nbsp;&nbsp; | [*TypeCastExpression*](#type-cast-expression)
+*OperatorExpression*: <br/>
+ &nbsp;&nbsp; [*NegationExpression*](#negation-operators) <br/>
+ &nbsp;&nbsp; | [*ComparisonExpression*](#comparison-operators) <br/>
+ &nbsp;&nbsp; | [*LogicalExpression*](#logical-operators) <br/>
+ &nbsp;&nbsp; | [*TypeCastExpression*](#type-cast-expression) <br/>
+ &nbsp;&nbsp; | [*AssignmentExpression*](#assignment-expression) <br/>
+ &nbsp;&nbsp; | [*CompoundAssignmentExpression*](#compound-assignment-expressions)
 </div>
 
 Operators are defined for built in types by the Lapis language.
 Many of the following operators can also be overloaded (WIP).
 
 ## Summary
-
-1. [Negation operators](#negation-operators)
-2. [Comparison operators](#comparison-operators)
-3. [Logical operators](#logical-operators)
-4. [Type cast expression](#type-cast-expression)
-5. [Variable assignement](#variable-assignement)
+ 1. [Negation operators](#negation-operators)
+ 2. [Comparison operators](#comparison-operators)
+ 3. [Logical operators](#logical-operators)
+ 4. [Type cast expression](#type-cast-expression)
+ 5. [Assignment expression](#assignment-expression)
+ 6. [Compound assignment expressions](#compound-assignment-expressions)
 
 ## Negation operators
 
 <div style="background-color: rgba(255, 255, 255, 0.15);">
 <strong>Syntax</strong>
 
-*NegationExpression*: <br />
- &nbsp;&nbsp; `-` *Expression* <br />
+*NegationExpression*: <br/>
+ &nbsp;&nbsp; `-` *Expression* <br/>
  &nbsp;&nbsp; `!` *Expression*
 </div>
 
@@ -48,14 +50,14 @@ They are not overloadable.
 <div style="background-color: rgba(255, 255, 255, 0.15);">
 <strong>Syntax</strong>
 
-*ComparisonExpression*: <br />
- &nbsp;&nbsp; *Expression* `==` *Expression* <br />
- &nbsp;&nbsp; | *Expression* `!=` *Expression* <br />
- &nbsp;&nbsp; | *Expression* `>` *Expression* <br />
- &nbsp;&nbsp; | *Expression* `<` *Expression* <br />
- &nbsp;&nbsp; | *Expression* `>=` *Expression* <br />
- &nbsp;&nbsp; | *Expression* `<=` *Expression* <br />
- &nbsp;&nbsp; | *Expression* `<=>` *Expression* <br />
+*ComparisonExpression*: <br/>
+ &nbsp;&nbsp; *Expression* `==` *Expression* <br/>
+ &nbsp;&nbsp; | *Expression* `!=` *Expression* <br/>
+ &nbsp;&nbsp; | *Expression* `>` *Expression* <br/>
+ &nbsp;&nbsp; | *Expression* `<` *Expression* <br/>
+ &nbsp;&nbsp; | *Expression* `>=` *Expression* <br/>
+ &nbsp;&nbsp; | *Expression* `<=` *Expression* <br/>
+ &nbsp;&nbsp; | *Expression* `<=>` *Expression* <br/>
 </div>
 
 Comparison operators compare two operands and return a boolean value, except for the `<=>` operator which return an `i8` value.
@@ -67,8 +69,8 @@ WIP
 <div style="background-color: rgba(255, 255, 255, 0.15);">
 <strong>Syntax</strong>
 
-*LogicalExpression*: <br />
- &nbsp;&nbsp; *Expression* `||` *Expression* <br />
+*LogicalExpression*: <br/>
+ &nbsp;&nbsp; *Expression* `||` *Expression* <br/>
  &nbsp;&nbsp; | *Expression* `&&` *Expression*
 </div>
 
@@ -93,7 +95,7 @@ let z = (2 == 2) && true; // true
 <div style="background-color: rgba(255, 255, 255, 0.15);">
 <strong>Syntax</strong>
 
-*TypeCastExpression*: <br />
+*TypeCastExpression*: <br/>
  &nbsp;&nbsp; *Expression* `as` [*Type*](../../types.md)
 </div>
 
@@ -108,10 +110,17 @@ An example of an `as` expression:
 
 See: [Type#Type casting](../../types.md#type-casting) for further information.
 
-## Variable assignement
+## Assignment expression
+
+<div style="background-color: rgba(255, 255, 255, 0.15);">
+<strong>Syntax</strong>
+
+*AssignmentExpression*: <br/>
+ &nbsp;&nbsp; *Expression* `=` *Expression*
+</div>
 
 The `=` operator is used to assign a value to a variable.
-Its left-hand term should be the variable name, and its right-hand term an expression.
+Its right-hand term is an expression and its left-hand term is where the data will be written.
 
 The result of that expression will be put in the variable, assuming it is of the right type (otherwise the compiler will print out an error).
 
@@ -123,8 +132,24 @@ x = 5; // x will be 5
 x = x * 2; // x will become 10
 ```
 
-This last line may be shortened by using the `*=` operator: `x *= 2`.
-Similarly, the following subsitutions can be done:
+## Compound assignment expressions
+
+<div style="background-color: rgba(255, 255, 255, 0.15);">
+<strong>Syntax</strong>
+
+*CompoundAssignmentExpression*: <br/>
+ &nbsp;&nbsp; *Expression* `+=` *Expression* <br/>
+ &nbsp;&nbsp; | *Expression* `-=` *Expression* <br/>
+ &nbsp;&nbsp; | *Expression* `*=` *Expression* <br/>
+ &nbsp;&nbsp; | *Expression* `/=` *Expression* <br/>
+ &nbsp;&nbsp; | *Expression* `>>=` *Expression* <br/>
+ &nbsp;&nbsp; | *Expression* `<<=` *Expression* <br/>
+ &nbsp;&nbsp; | *Expression* `|=` *Expression* <br/>
+ &nbsp;&nbsp; | *Expression* `&=` *Expression* <br/>
+ &nbsp;&nbsp; | *Expression* `^=` *Expression* <br/>
+</div>
+
+The last line of the previous example could be shortened using the `*=` operator: `x *= 2`.
 
 | Substitution | Equivalent |
 | :------------- | :------------- |

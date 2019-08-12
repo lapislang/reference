@@ -29,7 +29,7 @@ let x = 3; // the compiler will decide which type `x` will have
 let i8 y = 4; // `y` will have as type `i8`
 ```
 
-Later on, new values may be given to a variable with the [variable assignement operator](expressions/operator_expressions#variable-assignement)
+Later on, new values may be given to a variable with the [assignement expression](expressions/operator_expressions#assignement-expression).
 
 ### Scope
 
@@ -39,7 +39,8 @@ The scope to which a variable is bound is the deepest scope in which the variabl
 
 If you try to access a variable outside of its scope, the compiler will give you an error message.
 
-On top of that, variables **cannot** be accessed before their declaration **and their first assignement**.
+On top of that, variables **cannot** be accessed before their declaration.
+<!-- **and their first assignement**.-->
 A variable **cannot** have the same name as a previously defined variable in the same scope **or in a parent scope**.
 
 Here is an example demonstrating this:
