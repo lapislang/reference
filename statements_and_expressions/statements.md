@@ -20,45 +20,16 @@ It may be followed by the type of the variable, though the compiler will often d
 
 This is then followed by the name of the variable.
 
-To give it a value once you declare it, you may append to this the `=` operator, followed by an expression, whose result will be put in the variable.
+This if followed by the `=` operator and an expression, whose result will be put in the variable.
 
 Here are a few examples:
 
 ```lapis
 let x = 3; // the compiler will decide which type `x` will have
 let i8 y = 4; // `y` will have as type `i8`
-let u32 z; // `z` has as type `u32`, but hasn't a value yet
 ```
 
-### Variable assignement
-
-The `=` operator is used to assign a value to a variable.
-Its left-hand term should be the variable name, and its right-hand term an expression.
-
-The result of that expression will be put in the variable, assuming it is of the right type (otherwise the compiler will print out an error).
-
-```lapis
-let x = 3;
-
-x = 5; // x will be 5
-
-x = x * 2; // x will become 10
-```
-
-This last line may be shortened by using the `*=` operator: `x *= 2`.
-Similarly, the following subsitutions can be done:
-
-| Substitution | Equivalent |
-| :------------- | :------------- |
-| `x += n` | `x = x + n` |
-| `x -= n` | `x = x - n` |
-| `x *= n` | `x = x * n` |
-| `x /= n` | `x = x / n` |
-| `x >>= n` | `x = x >> n` (bitshift right) |
-| `x <<= n` | `x = x << n` (bitshift left) |
-| `x |= n` | `x = x | n` (bitwise OR) |
-| `x &= n` | `x = x & n` (bitwise AND) |
-| `x ^= n` | `x = x ^ n` (bitwise XOR) |
+Later on, new values may be given to a variable with the [variable assignement operator](expressions/operator_expressions#variable-assignement)
 
 ### Scope
 

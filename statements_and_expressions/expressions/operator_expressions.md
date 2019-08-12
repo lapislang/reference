@@ -14,10 +14,12 @@ Operators are defined for built in types by the Lapis language.
 Many of the following operators can also be overloaded (WIP).
 
 ## Summary
- 1. [Negation operators](#negation-operators)
- 2. [Comparison operators](#comparison-operators)
- 3. [Logical operators](#logical-operators)
- 4. [Type cast expression](#type-cast-expression)
+
+1. [Negation operators](#negation-operators)
+2. [Comparison operators](#comparison-operators)
+3. [Logical operators](#logical-operators)
+4. [Type cast expression](#type-cast-expression)
+5. [Variable assignement](#variable-assignement)
 
 ## Negation operators
 
@@ -105,3 +107,33 @@ An example of an `as` expression:
 ```
 
 See: [Type#Type casting](../../types.md#type-casting) for further information.
+
+## Variable assignement
+
+The `=` operator is used to assign a value to a variable.
+Its left-hand term should be the variable name, and its right-hand term an expression.
+
+The result of that expression will be put in the variable, assuming it is of the right type (otherwise the compiler will print out an error).
+
+```lapis
+let x = 3;
+
+x = 5; // x will be 5
+
+x = x * 2; // x will become 10
+```
+
+This last line may be shortened by using the `*=` operator: `x *= 2`.
+Similarly, the following subsitutions can be done:
+
+| Substitution | Equivalent |
+| :------------- | :------------- |
+| `x += n` | `x = x + n` |
+| `x -= n` | `x = x - n` |
+| `x *= n` | `x = x * n` |
+| `x /= n` | `x = x / n` |
+| `x >>= n` | `x = x >> n` (bitshift right) |
+| `x <<= n` | `x = x << n` (bitshift left) |
+| `x |= n` | `x = x | n` (bitwise OR) |
+| `x &= n` | `x = x & n` (bitwise AND) |
+| `x ^= n` | `x = x ^ n` (bitwise XOR) |
