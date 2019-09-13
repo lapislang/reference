@@ -1,13 +1,51 @@
 # Statements
 
+<div style="background-color: rgba(255, 255, 255, 0.15);">
+<strong>Syntax</strong>
+
+*Statement*: <br />
+ &nbsp;&nbsp; [*Item*](../items/items.md) <br />
+ &nbsp;&nbsp; | [*LetStatement*](#let-statements) <br />
+ &nbsp;&nbsp; | [*ExpressionStatement*](#expression-statements)
+</div>
+
 A *statement* is a component of a block.
 
 ## Summary
 
-1. [Variables](#variables)
-    1. [Variable declaration](#variable-declaration)
-    2. [Variable assignement](#variable-assignement)
-    3. [Scope](#scope)
+1. [Declaration statements](#declaration-statements)
+2. [Expression statements](#expression-statements)
+
+## Declaration statements
+
+### `let` statements
+
+<div style="background-color: rgba(255, 255, 255, 0.15);">
+<strong>Syntax</strong>
+
+*LetStatement*: <br />
+ &nbsp;&nbsp; `let` [*Type*](../types.md)? IDENTIFIER (`=` *ExpressionWithoutBlock*)? `;`
+</div>
+
+A *`let` statement* is a statement which declares a new variable.
+
+It is defined by the `let` keyword followed optionally by the variable's [*type*](../types.md), then followed by the IDENTIFIER of the variable then the optional assignment expression: `=` followed by an *expression*.
+
+When no [*type*](../types.md) is specified, the compiler will infer the type, or will signal an error if not enough information is given to infer the type.
+
+## Expression statements
+
+<div style="background-color: rgba(255, 255, 255, 0.15);">
+<strong>Syntax</strong>
+
+*ExpressionStatement*: <br />
+ &nbsp;&nbsp; *ExpressionWithoutBlock* `;` <br />
+ &nbsp;&nbsp; | *ExpressionWithBlock*
+</div>
+
+An *expression statements* is an statement which evaluates an *expression* and ignore its result.
+
+<!-- @TODO: delete the rest of the file -->
 
 ## Variables
 
@@ -61,7 +99,3 @@ fn main() {
   let i32 c;
 }
 ```
-
-## Expression statements
-
-<!-- TODO -->
