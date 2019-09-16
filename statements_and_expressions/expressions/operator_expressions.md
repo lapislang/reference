@@ -58,6 +58,8 @@ They are not overloadable.
  &nbsp;&nbsp; | *Expression* `-` *Expression* <br/>
  &nbsp;&nbsp; | *Expression* `*` *Expression* <br/>
  &nbsp;&nbsp; | *Expression* `/` *Expression* <br/>
+ &nbsp;&nbsp; | *Expression* `%` *Expression* <br/>
+ &nbsp;&nbsp; | *Expression* `//` *Expression* <br/>
  &nbsp;&nbsp; | *Expression* `<<` *Expression* <br/>
  &nbsp;&nbsp; | *Expression* `>>` *Expression* <br/>
  &nbsp;&nbsp; | *Expression* `|` *Expression* <br/>
@@ -67,17 +69,19 @@ They are not overloadable.
 
 WIP
 
-|  Operator  |  Integer         |  Boolean    |  Floating point  |
-|------------|------------------|-------------|------------------|
-| `+`        | Addition         | Logical OR  | Addition         |
-| `-`        | Subtraction      |             | Subtraction      |
-| `*`        | Multiplication   | Logical AND | Multiplication   |
-| `/`        | Division         |             | Division         |
-| `<<`       | Left shift       |             |                  |
-| `>>`       | Right shift      |             |                  |
-| `|`        | Bitwise OR       | Logical OR  |                  |
-| `&`        | Bitwise AND      | Logical AND |                  |
-| `^`        | Bitwise XOR      | Logical XOR |                  |
+|  Operator  |  Integer           |  Boolean    |  Floating point    |
+|------------|--------------------|-------------|--------------------|
+| `+`        | Addition           | Logical OR  | Addition           |
+| `-`        | Subtraction        |             | Subtraction        |
+| `*`        | Multiplication     | Logical AND | Multiplication     |
+| `/`        | Division           |             | Division           |
+| `%`        | Remainder          |             | Remainder          |
+| `//`       | Euclidean division |             | Euclidean division |
+| `<<`       | Left shift         |             |                    |
+| `>>`       | Right shift        |             |                    |
+| `|`        | Bitwise OR         | Logical OR  |                    |
+| `&`        | Bitwise AND        | Logical AND |                    |
+| `^`        | Bitwise XOR        | Logical XOR |                    |
 
 ## Comparison operators
 
@@ -176,6 +180,8 @@ x = x * 2; // x will become 10
  &nbsp;&nbsp; | *Expression* `-=` *Expression* <br/>
  &nbsp;&nbsp; | *Expression* `*=` *Expression* <br/>
  &nbsp;&nbsp; | *Expression* `/=` *Expression* <br/>
+ &nbsp;&nbsp; | *Expression* `%=` *Expression* <br/>
+ &nbsp;&nbsp; | *Expression* `//=` *Expression* <br/>
  &nbsp;&nbsp; | *Expression* `>>=` *Expression* <br/>
  &nbsp;&nbsp; | *Expression* `<<=` *Expression* <br/>
  &nbsp;&nbsp; | *Expression* `|=` *Expression* <br/>
@@ -183,16 +189,22 @@ x = x * 2; // x will become 10
  &nbsp;&nbsp; | *Expression* `^=` *Expression* <br/>
 </div>
 
-The last line of the previous example could be shortened using the `*=` operator: `x *= 2`.
+The `+`, `-`, `*`, `/`, `%`, `//`, `>>`, `<<`, `|`, `&` and `^` operators may be composed with the `=` operator.
+The expression `x OP= n` is equivalent to `x = x OP n`, as it can be seen on the equivalence table:
 
-| Substitution | Equivalent |
-| :------------- | :------------- |
-| `x += n` | `x = x + n` |
-| `x -= n` | `x = x - n` |
-| `x *= n` | `x = x * n` |
-| `x /= n` | `x = x / n` |
-| `x >>= n` | `x = x >> n` (bitshift right) |
-| `x <<= n` | `x = x << n` (bitshift left) |
-| `x |= n` | `x = x | n` (bitwise OR) |
-| `x &= n` | `x = x & n` (bitwise AND) |
-| `x ^= n` | `x = x ^ n` (bitwise XOR) |
+| Substitution | Equivalent                    |
+|--------------|-------------------------------|
+| `x += n`     | `x = x + n`                   |
+| `x -= n`     | `x = x - n`                   |
+| `x *= n`     | `x = x * n`                   |
+| `x /= n`     | `x = x / n`                   |
+| `x %= n`     | `x = x % n`                   |
+| `x //= n`    | `x = x // n`                  |
+| `x >>= n`    | `x = x >> n` (bitshift right) |
+| `x <<= n`    | `x = x << n` (bitshift left)  |
+| `x |= n`     | `x = x | n` (bitwise OR)      |
+| `x &= n`     | `x = x & n` (bitwise AND)     |
+| `x ^= n`     | `x = x ^ n` (bitwise XOR)     |
+
+All of these expressions always has the [unit type](../../types.md).
+These operators can all be overloaded.
