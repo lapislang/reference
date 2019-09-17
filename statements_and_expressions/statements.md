@@ -14,9 +14,13 @@ A *statement* is a component of a block.
 ## Summary
 
 1. [Declaration statements](#declaration-statements)
+    1. [Item statements](#item-statements)
+    2. [`let` statements](#`let`-statements)
 2. [Expression statements](#expression-statements)
 
 ## Declaration statements
+
+### Item statements
 
 ### `let` statements
 
@@ -29,7 +33,7 @@ A *statement* is a component of a block.
 
 A *`let` statement* is a statement which declares a new variable.
 
-It is defined by the `let` keyword followed optionally by the variable's [*type*](../types.md), then followed by the IDENTIFIER of the variable then the optional assignment expression: `=` followed by an *expression*.
+It is defined by the `let` keyword followed optionally by the variable's [*type*](../types.md), then followed by the IDENTIFIER of the variable then the optional [assignment expression](expressions/operator_expressions.md#assignment-expression): `=` followed by an *expression*.
 
 When no [*type*](../types.md) is specified, the compiler will infer the type, or will signal an error if not enough information is given to infer the type.
 
