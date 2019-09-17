@@ -28,7 +28,7 @@ A *statement* is a component of a block.
 <strong>Syntax</strong>
 
 *LetStatement*: <br />
- &nbsp;&nbsp; `let` [*Type*](../types.md)? IDENTIFIER (`=` *ExpressionWithoutBlock*)? `;`
+ &nbsp;&nbsp; `let` [*Type*](../types.md)? [IDENTIFIER](../lexical_structure/identifiers.md) (`=` *ExpressionWithoutBlock*)? `;`
 </div>
 
 A *`let` statement* is a statement which declares a new variable.

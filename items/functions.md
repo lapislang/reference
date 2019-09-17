@@ -4,7 +4,7 @@
 <strong>Syntax</strong>
 
 *Function*: <br />
- &nbsp;&nbsp; `fn` *FunctionReturnType* IDENTIFIER *Generics* `(` *FunctionParameters* `)` *FunctionQualifiers* [*BlockExpression*](../statements_and_expressions/expressions/block_expression.md)
+ &nbsp;&nbsp; `fn` *FunctionReturnType* [IDENTIFIER](../lexical_structure/identifiers.md) *Generics* `(` *FunctionParameters* `)` *FunctionQualifiers* [*BlockExpression*](../statements_and_expressions/expressions/block_expression.md)
 
 *FunctionReturnType*: <br />
  &nbsp;&nbsp; [*Type*](../types.md)

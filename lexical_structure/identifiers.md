@@ -12,3 +12,16 @@ IDENTIFIER: <br/>
 </div>
 
 An identifier is a non-empty ASCII string which is used to name [items](../items/items.md), [variables](../statements_and_expressions/statements.md#`let`-statements) and [types](../types.md).
+
+An identifier can be of the following forms:
+
+Either:
+
+ * The first character is a letter.
+ * The remaining characters are alphanumeric or `_`.
+
+or:
+
+ * The first character is `_`.
+ * The remaining characters are alphanumeric or `_`.
+ * The identifier is more than one character: `_` alone is not an identifier.
