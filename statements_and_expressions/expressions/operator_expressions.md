@@ -16,6 +16,8 @@
 Operators are defined for built in types by the Lapis language.
 Many of the following operators can also be overloaded (WIP).
 
+Binary operators expressions are all written with infix notation
+
 ## Summary
 
  1. [Negation operators](#negation-operators)
@@ -59,7 +61,7 @@ They are not overloadable.
  &nbsp;&nbsp; | *Expression* `*` *Expression* <br/>
  &nbsp;&nbsp; | *Expression* `/` *Expression* <br/>
  &nbsp;&nbsp; | *Expression* `%` *Expression* <br/>
- &nbsp;&nbsp; | *Expression* `//` *Expression* <br/>
+ &nbsp;&nbsp; | *Expression* `%/` *Expression* <br/>
  &nbsp;&nbsp; | *Expression* `<<` *Expression* <br/>
  &nbsp;&nbsp; | *Expression* `>>` *Expression* <br/>
  &nbsp;&nbsp; | *Expression* `|` *Expression* <br/>
@@ -67,7 +69,7 @@ They are not overloadable.
  &nbsp;&nbsp; | *Expression* `^` *Expression* <br/>
 </div>
 
-WIP
+The following table summarizes the behavior of the arithmetic and logical binary operators on primitive types.
 
 |  Operator  |  Integer           |  Boolean    |  Floating point    |
 |------------|--------------------|-------------|--------------------|
@@ -76,12 +78,19 @@ WIP
 | `*`        | Multiplication     | Logical AND | Multiplication     |
 | `/`        | Division           |             | Division           |
 | `%`        | Remainder          |             | Remainder          |
-| `//`       | Euclidean division |             | Euclidean division |
+| `%/`       | Euclidean division |             | Euclidean division |
 | `<<`       | Left shift         |             |                    |
 | `>>`       | Right shift        |             |                    |
 | `|`        | Bitwise OR         | Logical OR  |                    |
 | `&`        | Bitwise AND        | Logical AND |                    |
 | `^`        | Bitwise XOR        | Logical XOR |                    |
+
+Here's an example of the operators being used:
+
+```lapis
+2 + 2 // result is 4
+7 %/ 2 // result is 3
+```
 
 ## Comparison operators
 
@@ -181,7 +190,7 @@ x = x * 2; // x will become 10
  &nbsp;&nbsp; | *Expression* `*=` *Expression* <br/>
  &nbsp;&nbsp; | *Expression* `/=` *Expression* <br/>
  &nbsp;&nbsp; | *Expression* `%=` *Expression* <br/>
- &nbsp;&nbsp; | *Expression* `//=` *Expression* <br/>
+ &nbsp;&nbsp; | *Expression* `%/=` *Expression* <br/>
  &nbsp;&nbsp; | *Expression* `>>=` *Expression* <br/>
  &nbsp;&nbsp; | *Expression* `<<=` *Expression* <br/>
  &nbsp;&nbsp; | *Expression* `|=` *Expression* <br/>
@@ -199,7 +208,7 @@ The expression `x OP= n` is equivalent to `x = x OP n`, as it can be seen on the
 | `x *= n`     | `x = x * n`                   |
 | `x /= n`     | `x = x / n`                   |
 | `x %= n`     | `x = x % n`                   |
-| `x //= n`    | `x = x // n`                  |
+| `x %/= n`    | `x = x %/ n`                  |
 | `x >>= n`    | `x = x >> n` (bitshift right) |
 | `x <<= n`    | `x = x << n` (bitshift left)  |
 | `x |= n`     | `x = x | n` (bitwise OR)      |

@@ -75,7 +75,7 @@ License comments are like multiline comments, except that they start with the `/
 They are only written at the beginning of a file, they are also exported in header files by the compiler.
 The license comment allows you to write the license under which your file is licensed.
 
-If misplaced, the compiler will warn the programmer if the warning option `misplaced_license_comments` is enabled.
+If misplaced and the warning option `misplaced_license_comments` is enabled, then the compiler will warn the programmer about the misplacement.
 
 Here is a quick example with a MIT license:
 
