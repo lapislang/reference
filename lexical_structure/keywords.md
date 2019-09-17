@@ -5,17 +5,18 @@ They cannot be used as identifiers.
 
 ## Strict keywords
 
-|  Keyword      |  Internal name    |  Meaning                                                                                              |
-|---------------|-------------------|-------------------------------------------------------------------------------------------------------|
-| `as`          | `KW_AS`           | [Type casting](../statements_and_expressions/expressions/operator_expressions.md#type-cast-expression)   |
-| `const`       | `KW_CONST`        | WIP                                                                                                   |
-| `constexpr`   | `KW_CONSTEXPR`    | Constant expression                                                                                   |
-| `false`       | `KW_FALSE`        | Boolean value                                                                                         |
-| `fn`          | `KW_FN`           | [Function declaration](../items/functions.md)                                                            |
-| `inline`      | `KW_INLINE`       | [Function inlining](../items/functions.md#inline-functions)                                              |
-| `let` | `KW_LET` | [`let` statements](../statements_and_expressions/statements.md#`let`-statements) |
-| `true`        | `KW_TRUE`         | Boolean value                                                                                         |
-| `type`        | `KW_TYPE`         | [Type declaration](../types.md#type-definition)                                                          |
+|  Keyword      |  Internal name    |  Meaning                                                                                               |
+|---------------|-------------------|--------------------------------------------------------------------------------------------------------|
+| `as`          | `KW_AS`           | [Type casting](../statements_and_expressions/expressions/operator_expressions.md#type-cast-expression) |
+| `const`       | `KW_CONST`        | WIP                                                                                                    |
+| `constexpr`   | `KW_CONSTEXPR`    | Constant expression                                                                                    |
+| `false`       | `KW_FALSE`        | Boolean value                                                                                          |
+| `fn`          | `KW_FN`           | [Function declaration](../items/functions.md)                                                          |
+| `inline`      | `KW_INLINE`       | [Function inlining](../items/functions.md#inline-functions)                                            |
+| `let`         | `KW_LET`          | [`let` statements](../statements_and_expressions/statements.md#`let`-statements)                       |
+| `return`      | `KW_RETURN`       | [Function return statement](../items/functions.md)                                                     |
+| `true`        | `KW_TRUE`         | Boolean value                                                                                          |
+| `type`        | `KW_TYPE`         | [Type declaration](../types.md#type-definition)                                                        |
 
 ## Reserved keywords
 
@@ -27,17 +28,25 @@ Reserved keywords are keywords which are not currently used in the Lapis program
 |-------------|-----------------|
 | `abstract`  | `KW_ABSTRACT`   |
 | `break`     | `KW_BREAK`      |
+| `case`      | `KW_CASE`       |
 | `catch`     | `KW_CATCH`      |
 | `class`     | `KW_CLASS`      |
 | `continue`  | `KW_CONTINUE`   |
+| `default`   | `KW_DEFAULT`    |
+| `else`      | `KW_ELSE`       |
+| `enum`      | `KW_ENUM`       |
 | `extends`   | `KW_EXTENDS`    |
 | `final`     | `KW_FINAL`      |
 | `for`       | `KW_FOR`        |
+| `if`        | `KW_IF`         |
+| `is`        | `KW_IS`         |
 | `impl`      | `KW_IMPL`       |
 | `interface` | `KW_INTERFACE`  |
+| `namespace` | `KW_NAMESPACE`  |
 | `private`   | `KW_PRIVATE`    |
 | `protected` | `KW_PROTECTED`  |
 | `public`    | `KW_PUBLIC`     |
 | `struct`    | `KW_STRUCT`     |
+| `switch`    | `KW_SWITCH`     |
 | `try`       | `KW_TRY`        |
 | `while`     | `KW_WHILE`      |
