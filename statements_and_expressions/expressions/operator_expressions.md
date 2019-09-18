@@ -10,7 +10,8 @@
  &nbsp;&nbsp; | [*LogicalExpression*](#logical-operators) <br/>
  &nbsp;&nbsp; | [*TypeCastExpression*](#type-cast-expression) <br/>
  &nbsp;&nbsp; | [*AssignmentExpression*](#assignment-expression) <br/>
- &nbsp;&nbsp; | [*CompoundAssignmentExpression*](#compound-assignment-expressions)
+ &nbsp;&nbsp; | [*CompoundAssignmentExpression*](#compound-assignment-expressions) <br/>
+ &nbsp;&nbsp; | [*ConditionalOperatorExpression*](#conditional-operator)
 </div>
 
 Operators are defined for built in types by the Lapis language.
@@ -27,6 +28,7 @@ Binary operators expressions are all written with infix notation
  5. [Type cast expression](#type-cast-expression)
  6. [Assignment expression](#assignment-expression)
  7. [Compound assignment expressions](#compound-assignment-expressions)
+ 8. [Conditional operator](#conditional-operator)
 
 ## Negation operators
 
@@ -217,3 +219,26 @@ The expression `x OP= n` is equivalent to `x = x OP n`, as it can be seen on the
 
 All of these expressions always has the [unit type](../../types.md).
 These operators can all be overloaded.
+
+## Conditional operator
+
+<div style="background-color: rgba(255, 255, 255, 0.15);">
+<strong>Syntax</strong>
+
+*ConditionalOperatorExpression*: <br/>
+ &nbsp;&nbsp; *Expression* `?` *Expression* `:` *Expression* <br/>
+</div>
+
+This operator is the only ternary operator of Lapis. The conditional operator has 3 operands, the first operand's type is a [boolean type](../../types.md#boolean-type): the result of the operator depends of the first operand's value. The types of the other operands must be equivalent.
+
+If the first operand is `true`, the operator's result will be the evaluation of the second operator, else it will be the evaluation of the third operator.
+
+*The conditional operator* is associative to the right, it means that `a ? b : c ? d : e` is evaluate as `a ? b : (c ? d : e)`.
+
+Here's an example:
+
+```lapis
+let a = true ? 1 : 0; // a = 1
+let b = c ? 2 : 9; // if c == true then b = 2, else b = 4
+let d = b == 2 ? 42 : e as (i64, i64); // error: the second operator is of type i32 and the third operator is of type (i64, i64) (a tuple), they are not equivalent.
+```
