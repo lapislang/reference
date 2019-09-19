@@ -25,3 +25,20 @@ or:
  * The first character is `_`.
  * The remaining characters are alphanumeric or `_`.
  * The identifier is more than one character: `_` alone is not an identifier.
+
+These are valid identifiers:
+
+* `lapis`
+* `john1234`
+* `a4`
+* `did_i_eat_salad`
+* `Tomato`
+* `T_o_M_a_T_o` <!-- (although I wouldn't recommend this) -->
+* `_red`
+* `__blue`
+
+These are invalid identifiers:
+
+* `4a`
+* `is-this-home`
+* `_`

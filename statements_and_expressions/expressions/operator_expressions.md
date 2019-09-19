@@ -111,6 +111,8 @@ Here's an example of the operators being used:
 
 Comparison operators compare two operands and return a boolean value, except for the `<=>` operator which return an `i8` value.
 
+<!-- @TODO et pk pas un (GT | LT | EQ) type union? -->
+
 WIP
 
 ## Logical operators
@@ -217,7 +219,7 @@ The expression `x OP= n` is equivalent to `x = x OP n`, as it can be seen on the
 | `x &= n`     | `x = x & n` (bitwise AND)     |
 | `x ^= n`     | `x = x ^ n` (bitwise XOR)     |
 
-All of these expressions always has the [unit type](../../types.md).
+All of these expressions always have the [unit type](../../types.md).
 These operators can all be overloaded.
 
 ## Conditional operator
@@ -231,7 +233,7 @@ These operators can all be overloaded.
 
 This operator is the only ternary operator of Lapis. The conditional operator has 3 operands, the first operand's type is a [boolean type](../../types.md#boolean-type): the result of the operator depends of the first operand's value. The types of the other operands must be equivalent.
 
-If the first operand is `true`, the operator's result will be the evaluation of the second operator, else it will be the evaluation of the third operator.
+If the first operand is `true`, the operator's result will be the evaluated value of the second operand, else it will be the evaluated value of the third operand.
 
 *The conditional operator* is associative to the right, it means that `a ? b : c ? d : e` is evaluate as `a ? b : (c ? d : e)`.
 
