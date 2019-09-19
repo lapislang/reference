@@ -1,8 +1,8 @@
 import <std/io.hl> // import
 
 fn i32 main() { // function declaration
-  let i32 a = 1; // basic variable declaration
-  let i32 b = 1;
+  let a: i32 = 1; // basic variable declaration
+  let b: i32 = 1;
   
   std::cout << 1 << std::endl << 1 << std::endl; // function call, string litteral
 

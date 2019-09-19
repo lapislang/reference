@@ -1,12 +1,12 @@
 import <std/io.hl> // import
 
 fn i32 main() {
-  let i32 n; // value-less declaration
+  let n: i32; // value-less declaration
   stdin::scanf("%d", &n); // function call, referencing
   
   stdout::printf("The prime factors of %d are:\n", n);
 
-  let i32 div = 2;
+  let div: i32 = 2;
   while (n > div) { // while loop
     if (n % div == 0) { // if statement
       n /= div; // /= assignment

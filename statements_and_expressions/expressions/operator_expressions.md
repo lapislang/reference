@@ -202,7 +202,7 @@ x = x * 2; // x will become 10
  &nbsp;&nbsp; | *Expression* `^=` *Expression* <br/>
 </div>
 
-The `+`, `-`, `*`, `/`, `%`, `//`, `>>`, `<<`, `|`, `&` and `^` operators may be composed with the `=` operator.
+The `+`, `-`, `*`, `/`, `%`, `%/`, `>>`, `<<`, `|`, `&` and `^` operators may be composed with the `=` operator.
 The expression `x OP= n` is equivalent to `x = x OP n`, as it can be seen on the equivalence table:
 
 | Substitution | Equivalent                    |

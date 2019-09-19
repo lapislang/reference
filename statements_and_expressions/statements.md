@@ -28,12 +28,12 @@ A *statement* is a component of a block.
 <strong>Syntax</strong>
 
 *LetStatement*: <br />
- &nbsp;&nbsp; `let` [*Type*](../types.md)? [IDENTIFIER](../lexical_structure/identifiers.md) (`=` *ExpressionWithoutBlock*)? `;`
+ &nbsp;&nbsp; `let` [IDENTIFIER](../lexical_structure/identifiers.md) ((`:` [*Type*](../types.md))? `=` *ExpressionWithoutBlock* | `:` [*Type*](../types.md) (`=` *ExpressionWithoutBlock*)?) `;`
 </div>
 
 A *`let` statement* is a statement which declares a new <!--@TODO: set of variables instead--> variable.
 
-It is defined with the `let` keyword optionally followed by the variable's [*type*](../types.md). This is then followed by the [IDENTIFIER](../lexical_structure/identifiers.md) of the variable, then the optional [assignment expression](expressions/operator_expressions.md#assignment-expression): `=`, followed by an *expression*.
+It is defined with the `let` keyword then followed by the [IDENTIFIER](../lexical_structure/identifiers.md) of the variable. This is then optionally followed by the variable's [*type*](../types.md) with `:` before, then the optional [assignment expression](expressions/operator_expressions.md#assignment-expression): `=`, followed by an *expression*.
 
 When no [*type*](../types.md) is specified, the compiler will infer the type, or will signal an error if not enough information is given to infer the type.
 
