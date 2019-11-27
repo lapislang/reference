@@ -12,8 +12,8 @@ The `copy` keyword may be used to override this behavior.
 
 Objects may be referenced in several ways:
 
-* [Unique reference](#unique_reference)
-* [Plural reference](#plural_reference)
+* [Unique reference](#unique-reference)
+* [Plural reference](#plural-reference)
 
 <!-- DRAFT:
 Unique reference - `u&Type`, `u:Type`, `unique:Type`, `u#Type`, `Type#u`, `Type #u`, `unique Type`
