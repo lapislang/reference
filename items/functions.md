@@ -4,13 +4,16 @@
 <strong>Syntax</strong>
 
 *Function*: <br />
- &nbsp;&nbsp; `fn` *FunctionReturnType* [IDENTIFIER](../lexical_structure/identifiers.md) *Generics* `(` *FunctionParameters* `)` *FunctionQualifiers* [*BlockExpression*](../statements_and_expressions/expressions/block_expression.md)
+ &nbsp;&nbsp; `fn` [IDENTIFIER](../lexical_structure/identifiers.md) *Generics* `(` *FunctionParameters* `)` *FunctionQualifiers*  *FunctionReturnType* [*BlockExpression*](../statements_and_expressions/expressions/block_expression.md)
 
 *FunctionReturnType*: <br />
- &nbsp;&nbsp; [*Type*](../types.md)
+ &nbsp;&nbsp; (`->` [*Type*](../types.md))?
 
 *FunctionParameters*: <br />
- &nbsp;&nbsp; *FunctionParam*
+ &nbsp;&nbsp; *FunctionParam* (`,` *FunctionParam*)\*
+
+*FunctionParam*: <br />
+ &nbsp;&nbsp; [IDENTIFIER](../lexical_structure/identifiers.md)`:` [*Type*](../types.md)
 </div>
 
 A *function* consists of a block, along with a name and a set of parameters.
@@ -22,7 +25,7 @@ If the *output type* is `void` then the *output type* is optional.
 Here are three examples of simple functions:
 
 ```lapis
-fn i32 answer_to_life_the_universe_and_everything() {
+fn answer_to_life_the_universe_and_everything() -> i32 {
     return 42;
 }
 
@@ -33,7 +36,7 @@ fn i32 answer_to_life_the_universe_and_everything() {
  * @param b The number b.
  * @return The result of the addition between the number a and the number b.
  */
-fn i32 add(i32 a, i32 b) {
+fn add(a: i32, b: i32) -> i32 {
     return a + b;
 }
 
@@ -65,7 +68,7 @@ They can only call const methods on member objects.
 For instance:
 
 ```lapis
-fn f64 get_length() const {
+fn get_length() const -> f64 {
     return math::sqrt(this.x * this.x, this.y * this.y);
 }
 ```
@@ -78,7 +81,7 @@ When called from a const context, the function is interpreted by the compiler at
 For instance:
 
 ```lapis
-fn i32 answer_to_life_the_universe_and_everything() constexpr {
+fn answer_to_life_the_universe_and_everything() constexpr -> i32 {
     return 42;
 }
 ```
@@ -104,11 +107,11 @@ It allows better execution time because it doesn't have to jump to another locat
 ### Examples
 
 ```lapis
-fn i32 add(i32 a, i32 b) inline {
+fn add(a: i32, b: i32) inline -> i32 {
     return a + b;
 }
 
-fn i32 call_add() {
+fn call_add() -> i32 {
     return add(2, 2);
 }
 ```
@@ -116,7 +119,7 @@ fn i32 call_add() {
 Will be the same as the following code during runtime:
 
 ```lapis
-fn i32 call_add() {
+fn call_add() -> i32 {
     return 2 + 2;
 }
 ```

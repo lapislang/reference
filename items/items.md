@@ -4,5 +4,7 @@
 <strong>Syntax</strong>
 
 *Item*: <br />
- &nbsp;&nbsp; [*Function*](./functions.md)
+ &nbsp;&nbsp; [*Function*](./functions.md) <br/>
+ &nbsp;&nbsp; | [*Namespace*](./namespaces.md) <br/>
+ &nbsp;&nbsp; | [*Type alias*](./type_aliases.md)
 </div>

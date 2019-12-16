@@ -107,10 +107,12 @@ See also: [Operator expression#Type cast expression](statements_and_expressions/
 
 // TODO
 
-## Type definition
+## Type alias
 
 Types can be user-defined with the `type` keyword.
 It works as an assignement: the type keyword is followed by the name of the type then the `=` character and the value.
+
+See [Type aliases](items/type_aliases.md).
 
 Here's a quick example with primitive types:
 

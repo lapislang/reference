@@ -1,6 +1,6 @@
 import <std/io.hl> // import
 
-fn i32 main() {
+fn main() -> i32 {
   let n: i32; // value-less declaration
   stdin::scanf("%d", &n); // function call, referencing
   

@@ -1,6 +1,6 @@
 import <std/io.hl> // import
 
-fn i32 main() { // function declaration
+fn main() -> i32 { // function declaration
   let a: i32 = 1; // basic variable declaration
   let b: i32 = 1;
   
